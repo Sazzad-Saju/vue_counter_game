@@ -13,7 +13,7 @@
     <form class="form">
       <label>Counter Main :</label>
       <div class="d-flex">
-        <input type="text" placeholder="Main Counter" ref="inputRef" :value="mainVal">
+        <input type="text" placeholder="Main Counter" ref="inputRef" :value="mainVal" disabled>
         <button type="button" class="btn btn-primary ms-5" @click="Calculate1(1)">
           <i class="fas fa-plus"></i>
         </button>

@@ -3,7 +3,7 @@
       <label>Counter Second:</label>
       <div class="d-flex">
         <!-- <input type="text" placeholder="Second Counter" @keyup.enter="$emit('secondVal', $event)">  -->
-        <input type="text" placeholder="Second Counter" :value="value">
+        <input type="text" placeholder="Second Counter" :value="value" disabled>
         <button type="button" class="btn btn-primary ms-5" @click="$emit('onClick',1)">
           <i class="fas fa-plus"></i>
         </button>

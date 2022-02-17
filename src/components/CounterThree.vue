@@ -2,7 +2,7 @@
     <form class="form" action="">
       <label>Counter Third:</label>
       <div class="d-flex">
-        <input type="text" placeholder="Third Counter" :value="value">
+        <input type="text" placeholder="Third Counter" :value="value" disabled>
         <button type="button" class="btn btn-primary ms-5" @click="$emit('onClick',1)">
           <i class="fas fa-plus"></i>
         </button>
