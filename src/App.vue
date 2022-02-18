@@ -20,12 +20,12 @@
         <button type="button" class="btn btn-danger ms-2" @click="Calculate1(-1)">
           <i class="fas fa-minus"></i>
         </button>
-        <input type="text" placeholder="Name" class="right">
+        <input type="text" placeholder="Name" class="right" v-model='nameVal'>
       </div>
     </form>
     <!-- <CounterTwo @secondVal="Sum({value:$event.target.value})"/> -->
-    <CounterTwo @onClick="Calculate2" :value="secondVal" />
-    <CounterThree @onClick="Calculate3" :value="thirdVal"/>
+    <CounterTwo @onClick="Calculate2" :value="secondVal" :getName="nameVal" @retName="retName" />
+    <CounterThree @onClick="Calculate3" :value="thirdVal" :getName="nameVal" @retName="retName" />
   </div>
 </template>
 
@@ -44,6 +44,7 @@ export default {
       mainVal: Math.floor(Math.random() * (10 - 1 + 1)) + 1,
       secondVal: Math.floor(Math.random() * (10 - 1 + 1)) + 1,
       thirdVal: Math.floor(Math.random() * (10 - 1 + 1)) + 1,
+      nameVal: null,
       // mainVal: 1,
       // secondVal: 1,
       // thirdVal: 1,
@@ -72,12 +73,16 @@ export default {
       // console.log('print');
       this.secondVal += val;
       this.thirdVal += val;
-    }
+    },
+
     // Sum(e){
     //   e.preventDefault();
     //   value = e.target.value;
     //   console.log(value);
     // }
+    retName(e){
+      this.nameVal= e.target.value;
+    }
   }
 }
 </script>

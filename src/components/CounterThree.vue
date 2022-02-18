@@ -9,7 +9,7 @@
         <button type="button" class="btn btn-danger ms-2" @click="$emit('onClick',-1)">
           <i class="fas fa-minus"></i>
         </button>
-        <input type="text" placeholder="Name" class="right">
+        <input type="text" placeholder="Name" class="right" :value="getName" @input="$emit('retName',$event)">
       </div>
     </form>
 </template>
@@ -19,6 +19,7 @@ export default {
   name: 'CounterThree',
   props: [
     'value',
+    'getName'
   ]
 }
 </script>
